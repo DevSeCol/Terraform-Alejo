@@ -49,6 +49,6 @@ jobs:
     - name: Deploy
       run: |
         gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "sudo apt install apache2 -y"
-        sudo ls -R
-        gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "sudo mv assets/index.html /var/www/html/index.html"
+        gcloud compute scp assets/index.html test:index.html --zone "us-central1-a" --project "devsecol"
+        gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "sudo mv index.html /var/www/html/index.html"
         
