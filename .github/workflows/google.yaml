@@ -73,9 +73,8 @@ jobs:
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
       run: |
-        gcloud beta compute ssh --zone "us-central1-a" "instance-1" --project "devsecol"
-#        gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE --project $GKE_PROJECT
-        sudo apt install apache2 -y
+        gcloud beta compute ssh --zone "us-central1-a" "test" --project "devsecol"
+        apt install apache2 -y
         sudo mv assets/index.html /var/www/html/index.html
 #        kubectl apply -f deployment.yaml
 #        echo DEBUG: kubectl set image deployment/test-deploy nginx-container=$REGISTRY_HOSTNAME/$GKE_PROJECT/$IMAGE:${GITHUB_SHA}
