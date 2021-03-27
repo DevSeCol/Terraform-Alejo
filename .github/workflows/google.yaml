@@ -49,5 +49,5 @@ jobs:
     - name: Deploy
       run: |
         gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol"
-        apt-get install apache2 -y
+        sudo apt-get install apache2 -y
         sudo mv assets/index.html /var/www/html/index.html
