@@ -40,8 +40,15 @@ jobs:
         service_account_email: ${{ secrets.TF_SERVICE_ACCOUNT_EMAIL }}
         service_account_key: ${{ secrets.TF_SERVICE_ACCOUNT }}
 
+# Configure docker to use the gcloud command-line tool as a credential helper
+    - run: |
+        # Set up docker to authenticate
+        # via gcloud command-line tool.
+        gcloud auth configure-docker
+      
     - name: Deploy
       run: |
         gcloud beta compute ssh --zone "us-central1-a" "test" --project "devsecol"
+
 #        apt install apache2 -y
 #        sudo mv assets/index.html /var/www/html/index.html
