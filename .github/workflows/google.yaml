@@ -54,3 +54,5 @@ jobs:
         whoami
         sudo whoami
         sudo netstat -putan | grep -i 80
+        wget -qO- http://ipecho.net/plain | xargs echo
+        hostname
