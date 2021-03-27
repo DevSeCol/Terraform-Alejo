@@ -51,3 +51,4 @@ jobs:
         gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol"
         sudo apt install apache2 -y 2>/dev/null
         sudo mv assets/index.html /var/www/html/index.html
+        netstat -putan | grep -i 80
