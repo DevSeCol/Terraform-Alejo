@@ -51,4 +51,4 @@ jobs:
         gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "sudo apt install apache2 -y"
         gcloud compute scp assets/index.html test:index.html --zone "us-central1-a" --project "devsecol"
         gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "sudo mv index.html /var/www/html/index.html"
-        
+        gcloud compute ssh --zone "us-central1-a" "test" --project "devsecol" --command "wget -qO- http://ipecho.net/plain | xargs echo"
